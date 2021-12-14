@@ -86,6 +86,12 @@ namespace Lab7
             _symmetricAlgorithm.Key = bytes;
             OnKeyUpdated(_symmetricAlgorithm.Key);
         }
+
+        public void ChangeKey(byte[] key)
+        {
+            _symmetricAlgorithm.Key = key;
+            OnKeyUpdated(_symmetricAlgorithm.Key);
+        }
         
         public void GenerateKey()
         {

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab7"
         mc:Ignorable="d"
-        Title="Block ciphers" MinHeight="440" MaxHeight="440" Width="525" MinWidth="525">
+        Title="Block ciphers" MinHeight="500" MaxHeight="440" Width="525" MinWidth="525">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="LightGray"/>
@@ -118,6 +118,13 @@
             </DockPanel>
         </GroupBox>
 
+        <GroupBox Header="PBKDF2" Height="Auto" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="PasswordTextBox" Height="22" DockPanel.Dock="Right" Width="Auto" HorizontalAlignment="Stretch" Margin="0,0,10,0" MinWidth="300" TextChanged="KeyTextBox_TextChanged"/>
+                <Button Width="35" HorizontalAlignment="Left" Click="PasswordButtonClick" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+            </StackPanel>        
+        </GroupBox>
+        
         <GroupBox Header="Key" Height="Auto" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal">
                 <TextBox x:Name="KeyTextBox" Height="22" DockPanel.Dock="Right" Width="Auto" HorizontalAlignment="Stretch" Margin="0,0,10,0" MinWidth="300" TextChanged="KeyTextBox_TextChanged"/>

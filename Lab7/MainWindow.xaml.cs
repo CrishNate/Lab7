@@ -298,5 +298,15 @@ namespace Lab7
         {
             _encrypter.ChangeInitVector(VectorTextBox.Text);
         }
+
+        private void PasswordButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
+            byte[] salt = new byte[24];
+            Rfc2898DeriveBytes pbkdf2 = new Rfc2898DeriveBytes(PasswordTextBox.Text, salt, 100000);
+            var key = pbkdf2.GetBytes(_encrypter.Key.Length);
+
+            _encrypter.ChangeKey(key);
+        }
     }
 }
